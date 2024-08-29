@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".month1.week2.activity_day_1_2_2">
+
+    <TextView
+        android:id="@+id/tv1221"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="16dp"
+        android:text="Android 对话框"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1222"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1221"
+        android:text="Toast" />
+
+    <Button
+        android:id="@+id/btnToast1221"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:text="默认toast"
+        android:textColor='#FFBBBB'
+        android:textSize="15sp"
+        android:layout_below="@+id/tv1222" />
+
+    <Button
+        android:id="@+id/btnToast1222"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="图片toast"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_toRightOf="@+id/btnToast1221"
+        android:layout_below="@+id/tv1222"/>
+
+    <Button
+        android:id="@+id/btnToast1223"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="自定义布局toast"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_toRightOf="@+id/btnToast1222"
+        android:layout_below="@+id/tv1222"/>
+
+
+    <TextView
+        android:id="@+id/tv1223"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnToast1221"
+        android:text="Dialog" />
+
+    <Button
+        android:id="@+id/btnDialog1221"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="普通对话框"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/tv1223"/>
+
+    <Button
+        android:id="@+id/btnDialog1222"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="列表对话框"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/tv1223"
+        android:layout_toRightOf="@+id/btnDialog1221"/>
+
+    <Button
+        android:id="@+id/btnDialog1223"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="单选对话框"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/tv1223"
+        android:layout_toRightOf="@+id/btnDialog1222"/>
+
+    <Button
+        android:id="@+id/btnDialog1224"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="多选对话框"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/btnDialog1221"/>
+
+    <Button
+        android:id="@+id/btnDialog1225"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="日期对话框"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/btnDialog1221"
+        android:layout_toRightOf="@+id/btnDialog1224"/>
+
+    <Button
+        android:id="@+id/btnDialog1226"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="时间对话框"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/btnDialog1221"
+        android:layout_toRightOf="@+id/btnDialog1225"/>
+
+    <TextView
+        android:id="@+id/tv1224"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDialog1224"
+        android:text="Notification" />
+    <Button
+        android:id="@+id/btnNotification1221"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="普通\n notification"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/tv1224"/>
+    <Button
+        android:id="@+id/btnNotification1222"
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="自定义\n notification"
+        android:textSize="15sp"
+        android:textColor='#FFBBBB'
+        android:layout_below="@+id/tv1224"
+        android:layout_toRightOf="@+id/btnNotification1221"/>
+
+</RelativeLayout>
