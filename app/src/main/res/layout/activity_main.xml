@@ -6,50 +6,54 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="30sp"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="学习任务规划"
+            android:textSize="30dp"/>
 
         <Button
             android:id="@+id/btnM1"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:text="第一个月"/>
+            android:layout_margin="20dp"
+            android:text="第一个月"
+            android:textSize="40dp"
+            style="@style/CustomTextViewStyle"/>
+
         <Button
             android:id="@+id/btnM2"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:layout_margin="20dp"
             android:text="第二个月"
-            />
+            android:textSize="40dp"
+            style="@style/CustomTextViewStyle"/>
+
         <Button
             android:id="@+id/btnM3"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:layout_margin="20dp"
             android:text="第三个月"
-            />
+            android:textSize="40dp"
+            style="@style/CustomTextViewStyle"/>
+
         <Button
             android:id="@+id/btnM4"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:layout_margin="20dp"
             android:text="第四个月"
-            />
+            android:textSize="40dp"
+            style="@style/CustomTextViewStyle"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="45sp"/>
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".month1.week2.activity_a">
+
+    <TextView
+        android:id="@+id/tvIntentA1231"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="30dp"
+        android:text="Activity A"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnIntentA1231"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转到 Activity B"
+        android:textSize="30sp"
+        android:textColor='#FFBBBB'
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_below="@+id/tvIntentA1231"
+        />
+
+    <EditText
+        android:id="@+id/edtIntentA1231"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:hint="点击输入内容"
+        android:layout_marginTop="30dp"
+        android:padding="10sp"
+        android:layout_below="@+id/btnIntentA1231"
+        />
+
+    <TextView
+        android:id="@+id/tvIntentA1232"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#A9A9A9  "
+        android:padding="10sp"
+        android:layout_below="@+id/edtIntentA1231"/>
+
+    <Button
+        android:id="@+id/btnIntentA1232"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出练习"
+        android:textSize="30sp"
+        android:textColor='#FFBBBB'
+        android:layout_marginTop="200dp"
+        android:padding="10sp"
+        android:layout_below="@+id/tvIntentA1232"
+        />
+
+</RelativeLayout>

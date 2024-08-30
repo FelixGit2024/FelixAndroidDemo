@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDemoFX"
         tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".month1.activity_month_1"
             android:exported="false" />
@@ -35,22 +46,24 @@
             android:name=".month1.week2.activity_day_1_2_3"
             android:exported="false" />
         <activity
+            android:name=".month1.week2.activity_a"
+            android:exported="false" />
+        <activity
+            android:name=".month1.week2.activity_b"
+            android:exported="false" />
+        <activity
             android:name=".month1.week3.activity_week_1_3"
+            android:exported="false" />
+        <activity
+            android:name=".month1.week3.activity_day_1_3_1"
+            android:exported="false" />
+        <activity
+            android:name=".month1.week3.activity_day_1_3_2"
             android:exported="false" />
         <activity
             android:name=".month1.week4.activity_week_1_4"
             android:exported="false" />
 
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

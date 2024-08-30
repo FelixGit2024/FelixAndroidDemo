@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".month1.week2.activity_b">
+
+    <TextView
+        android:id="@+id/tvIntentB1231"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="30dp"
+        android:text="Activity B"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnIntentB1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="完成"
+        android:textSize="30sp"
+        android:textColor='#FFBBBB'
+        android:layout_margin="10sp"
+        android:padding="10sp"
+        android:layout_below="@+id/tvIntentB1231"
+        />
+
+    <TextView
+        android:id="@+id/tvIntentB1232"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#A9A9A9 "
+        android:padding="10sp"
+        android:layout_below="@+id/btnIntentB1"/>
+
+    <EditText
+        android:id="@+id/edtIntentB1231"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:hint="点击输入内容"
+        android:layout_marginTop="30dp"
+        android:padding="10sp"
+        android:layout_below="@+id/tvIntentB1232"
+        />
+
+</RelativeLayout>

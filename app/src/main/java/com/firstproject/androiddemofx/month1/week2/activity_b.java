@@ -1,10 +1,12 @@
 package com.firstproject.androiddemofx.month1.week2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,33 +16,39 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-public class activity_day_1_2_3 extends AppCompatActivity {
+public class activity_b extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_day123);
+        setContentView(R.layout.activity_day123b);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        Button btnIntent1231=findViewById(R.id.btnIntent1231);
-        btnIntent1231.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(activity_day_1_2_3.this,activity_a.class);
-                startActivity(intent);
-            }
-        });
+        Intent intentFromA = getIntent();
+        String aToB = intentFromA.getStringExtra("A_to_B");
 
-        Button btnIntent1232=findViewById(R.id.btnIntent1232);
-        btnIntent1232.setOnClickListener(new View.OnClickListener() {
+        TextView tvIntentB1232=findViewById(R.id.tvIntentB1232);
+        tvIntentB1232.setText(aToB);
+
+        Button btnIntentB1=findViewById(R.id.btnIntentB1);
+        btnIntentB1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity_day_1_2_3.this, "点击Activity A进入组件交互练习", Toast.LENGTH_SHORT).show();
+                Intent returnIntent=new Intent();
+                EditText viewById = (EditText) findViewById(R.id.edtIntentB1231);
+                String val=viewById.getText().toString();
+
+                if (val!=null && val!=""){
+                    returnIntent.putExtra("B_to_A",val);
+                    setResult(Activity.RESULT_OK,returnIntent);
+                }
+                finish();
             }
         });
     }

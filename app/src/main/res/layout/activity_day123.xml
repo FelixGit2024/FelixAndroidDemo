@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".month1.week2.activity_day_1_2_3">
+    android:orientation="vertical"
+    tools:context=".month1.week2.activity_day_1_2_3"
+    android:layout_marginTop="1dp"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击下面\nActivity-A\n进入组件交互练习"
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="40sp"/>
+
+    <Button
+        android:id="@+id/btnIntent1231"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity A"
+        android:textSize="60sp"
+        android:textColor='#FFBBBB'
+        android:layout_marginTop="70sp"
+        android:padding="10sp"
+        android:layout_below="@+id/tvIntentA1231"
+        />
+
+    <Button
+        android:id="@+id/btnIntent1232"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity B"
+        android:textSize="60sp"
+        android:textColor='#FFBBBB'
+        android:layout_marginTop="70sp"
+        android:padding="10sp"
+        android:layout_below="@+id/btnIntent1231"
+        />
+
+</LinearLayout>
