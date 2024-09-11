@@ -3,6 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
+    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDemoFX"
         tools:targetApi="31">
-
+        <activity
+            android:name=".month1.week4.activity_day_1_4_1"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -57,13 +69,36 @@
         <activity
             android:name=".month1.week3.activity_day_1_3_1"
             android:exported="false" />
+
+        <service
+            android:name=".month1.week3.serviceForStartDay131"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="location|mediaPlayback|phoneCall" />
+        <service
+            android:name=".month1.week3.serviceForBindDay131"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="location|mediaPlayback|phoneCall" />
+
         <activity
             android:name=".month1.week3.activity_day_1_3_2"
             android:exported="false" />
+
+        <service
+            android:name=".month1.week3.serviceForStartDay132"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="location|mediaPlayback|phoneCall" />
+        <service
+            android:name=".month1.week3.serviceForBindDay132"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="location|mediaPlayback|phoneCall" />
+
         <activity
             android:name=".month1.week4.activity_week_1_4"
             android:exported="false" />
-
     </application>
 
 </manifest>

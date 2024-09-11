@@ -34,8 +34,8 @@ public class activity_week_1_3 extends AppCompatActivity {
 
         ListView lv13=findViewById(R.id.list_view_1_3);
         ArrayList<ModelDay> dayList=new ArrayList<>();
-        dayList.add(new ModelDay(R.drawable.number_b_1,"1-3-1","四大组件-Service","已完成"));
-        dayList.add(new ModelDay(R.drawable.number_b_1,"1-3-2","四大组件-Broadcast","已完成"));
+        dayList.add(new ModelDay(R.drawable.number_b_1,"1-3-1","四大组件-Service\n生命周期","已完成"));
+        dayList.add(new ModelDay(R.drawable.number_b_2,"1-3-2","任务与输出\nActivity\nService\nBroadcast","已完成"));
         ListViewDayAdapt dayAdapt = new ListViewDayAdapt(this, R.layout.listview_item_day, dayList);
         lv13.setAdapter(dayAdapt);
 
