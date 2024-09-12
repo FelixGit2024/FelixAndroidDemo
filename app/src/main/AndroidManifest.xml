@@ -24,9 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDemoFX"
         tools:targetApi="31">
-        <activity
-            android:name=".month1.week4.activity_day_1_4_1"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -95,9 +93,14 @@
             android:enabled="true"
             android:exported="true"
             android:foregroundServiceType="location|mediaPlayback|phoneCall" />
-
         <activity
             android:name=".month1.week4.activity_week_1_4"
+            android:exported="false" />
+        <activity
+            android:name=".month1.week4.activity_day_1_4_2"
+            android:exported="false" />
+        <activity
+            android:name=".month1.week4.activity_day_1_4_1"
             android:exported="false" />
     </application>
 
