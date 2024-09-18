@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-public class activity_a extends AppCompatActivity {
+public class Activity_A extends AppCompatActivity {
 
     TextView tvIntentA1232;
 
@@ -50,7 +50,7 @@ public class activity_a extends AppCompatActivity {
         btnIntentA1231.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentToB=new Intent(activity_a.this,activity_b.class);
+                Intent intentToB=new Intent(Activity_A.this, Activity_B.class);
                 EditText viewById = (EditText) findViewById(R.id.edtIntentA1231);
                 String val = viewById.getText().toString();
                 if (val!=null && val!=""){

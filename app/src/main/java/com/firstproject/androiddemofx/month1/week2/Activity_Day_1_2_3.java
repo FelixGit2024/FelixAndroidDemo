@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-public class activity_day_1_2_3 extends AppCompatActivity {
+public class Activity_Day_1_2_3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class activity_day_1_2_3 extends AppCompatActivity {
         btnIntent1231.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(activity_day_1_2_3.this,activity_a.class);
+                Intent intent=new Intent(Activity_Day_1_2_3.this, Activity_A.class);
                 startActivity(intent);
             }
         });
@@ -40,7 +40,7 @@ public class activity_day_1_2_3 extends AppCompatActivity {
         btnIntent1232.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity_day_1_2_3.this, "点击Activity A进入组件交互练习", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Activity_Day_1_2_3.this, "点击Activity A进入组件交互练习", Toast.LENGTH_SHORT).show();
             }
         });
     }

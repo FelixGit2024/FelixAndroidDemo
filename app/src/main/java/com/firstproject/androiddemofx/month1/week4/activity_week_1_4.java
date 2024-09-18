@@ -19,7 +19,7 @@ import com.firstproject.androiddemofx.model.ModelDay;
 
 import java.util.ArrayList;
 
-public class activity_week_1_4 extends AppCompatActivity {
+public class Activity_Week_1_4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +45,13 @@ public class activity_week_1_4 extends AppCompatActivity {
                 TextView tv = (TextView) view.findViewById(R.id.day);
                 String dayStr = tv.getText().toString();
                 if(dayStr=="1-4-1"){
-                    Intent intent = new Intent(activity_week_1_4.this, activity_day_1_4_1.class);
+                    Intent intent = new Intent(Activity_Week_1_4.this, Activity_Day_1_4_1.class);
                     startActivity(intent);
                 } else if (dayStr=="1-4-2") {
-                    Intent intent = new Intent(activity_week_1_4.this, activity_day_1_4_2.class);
+                    Intent intent = new Intent(Activity_Week_1_4.this, Activity_Day_1_4_2.class);
+                    startActivity(intent);
+                }else if (dayStr=="1-4-3") {
+                    Intent intent = new Intent(Activity_Week_1_4.this, Activity_Day_1_4_3.class);
                     startActivity(intent);
                 }
             }

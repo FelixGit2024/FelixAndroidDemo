@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-public class activity_day_1_3_1 extends AppCompatActivity {
+public class Activity_Day_1_3_1 extends AppCompatActivity {
 
     private boolean isBound;
     private TextView tvService1311;
@@ -58,7 +58,7 @@ public class activity_day_1_3_1 extends AppCompatActivity {
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, android.os.IBinder service) {
-            serviceForBindDay131.MyBinder binder = (serviceForBindDay131.MyBinder) service;
+            ServiceForBindDay131.MyBinder binder = (ServiceForBindDay131.MyBinder) service;
             Log.d("MainActivity", "Service connected");
             String currentText = tvService1312.getText().toString();
             tvService1312.setText(currentText+"Service connected\n");
@@ -101,8 +101,8 @@ public class activity_day_1_3_1 extends AppCompatActivity {
         tvService1312.setVerticalScrollBarEnabled(true);
 
         IntentFilter start_filter = new IntentFilter("START_SERVICE_LIFECYCLE_BROADCAST");
-        IntentFilter bind_filter = new IntentFilter("BIND_SERVICE_LIFECYCLE_BROADCAST");
         registerReceiver(startServiceStatusReceiver, start_filter);
+        IntentFilter bind_filter = new IntentFilter("BIND_SERVICE_LIFECYCLE_BROADCAST");
         registerReceiver(bindServiceStatusReceiver, bind_filter);
 
         Button startServiceButton=findViewById(R.id.btnService1311);
@@ -113,7 +113,7 @@ public class activity_day_1_3_1 extends AppCompatActivity {
         startServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_day_1_3_1.this, serviceForStartDay131.class);
+                Intent intent = new Intent(Activity_Day_1_3_1.this, ServiceForStartDay131.class);
                 startService(intent);
             }
         });
@@ -121,7 +121,7 @@ public class activity_day_1_3_1 extends AppCompatActivity {
         stopServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_day_1_3_1.this, serviceForStartDay131.class);
+                Intent intent = new Intent(Activity_Day_1_3_1.this, ServiceForStartDay131.class);
                 stopService(intent);
             }
         });
@@ -129,7 +129,7 @@ public class activity_day_1_3_1 extends AppCompatActivity {
         bindServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_day_1_3_1.this, serviceForBindDay131.class);
+                Intent intent = new Intent(Activity_Day_1_3_1.this, ServiceForBindDay131.class);
                 bindService(intent, serviceConnection, BIND_AUTO_CREATE);
                 isBound = true;
             }

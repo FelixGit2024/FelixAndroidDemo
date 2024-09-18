@@ -9,9 +9,9 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 
-public class serviceForBindDay131 extends Service {
+public class ServiceForBindDay131 extends Service {
     private static final String TAG = "MyBindService1";
-    public MyBinder myBinder=new serviceForBindDay131.MyBinder();
+    public MyBinder myBinder=new ServiceForBindDay131.MyBinder();
     @Override
     public void onCreate() {
         super.onCreate();

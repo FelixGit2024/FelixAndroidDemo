@@ -22,7 +22,7 @@ import com.firstproject.androiddemofx.R;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class activity_day_1_4_2 extends AppCompatActivity {
+public class Activity_Day_1_4_2 extends AppCompatActivity {
 
     private EditText editText;
     private TextView textView;

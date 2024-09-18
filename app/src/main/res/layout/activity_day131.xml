@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".month1.week3.activity_day_1_3_1">
+    tools:context=".month1.week3.Activity_Day_1_3_1">
 
     <LinearLayout
         android:layout_width="180dp"
@@ -20,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:text="start\nService"
             android:layout_marginTop="40dp"
-            android:textSize="33dp"/>
+            android:textSize="30dp"/>
         <Button
             android:id="@+id/btnService1312"
             android:layout_width="160dp"
@@ -28,15 +28,15 @@
             android:layout_gravity="center_horizontal"
             android:text="stop\nService"
             android:layout_marginTop="40dp"
-            android:textSize="33dp"/>
+            android:textSize="30dp"/>
         <Button
             android:id="@+id/btnService1313"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="bind\nService"
-            android:layout_marginTop="40dp"
-            android:textSize="33dp"/>
+            android:layout_marginTop="90dp"
+            android:textSize="30dp"/>
         <Button
             android:id="@+id/btnService1314"
             android:layout_width="160dp"
@@ -44,7 +44,7 @@
             android:layout_gravity="center_horizontal"
             android:text="unbind\nService"
             android:layout_marginTop="40dp"
-            android:textSize="33dp"/>
+            android:textSize="30dp"/>
 
     </LinearLayout>
 
@@ -65,7 +65,7 @@
         <TextView
             android:id="@+id/tvService1311"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="230dp"
             android:textSize="20dp"
             android:scrollbars="vertical"/>
 
@@ -81,7 +81,7 @@
         <TextView
             android:id="@+id/tvService1312"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:textSize="20dp"
             android:scrollbars="vertical"/>
 

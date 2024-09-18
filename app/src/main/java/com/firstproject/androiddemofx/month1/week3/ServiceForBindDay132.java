@@ -17,11 +17,11 @@ import com.firstproject.androiddemofx.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class serviceForBindDay132 extends Service {
+public class ServiceForBindDay132 extends Service {
     private static final String TAG = "MyBindService";
     private NotificationManager notificationManager;
     private Timer timer;
-    public serviceForBindDay132.MyBinder myBinder=new serviceForBindDay132.MyBinder();
+    public ServiceForBindDay132.MyBinder myBinder=new ServiceForBindDay132.MyBinder();
     @Override
     public void onCreate() {
         super.onCreate();
