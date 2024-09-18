@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".month1.week4.activity_day_1_4_1"
+    tools:context=".month1.week4.Activity_Day_1_4_1"
     android:orientation="vertical">
 
     <ImageView

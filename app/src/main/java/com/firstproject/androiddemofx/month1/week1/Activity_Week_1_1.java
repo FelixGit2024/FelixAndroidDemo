@@ -16,13 +16,13 @@ import androidx.core.view.WindowInsetsCompat;
 import com.firstproject.androiddemofx.R;
 import com.firstproject.androiddemofx.listviewadapt.ListViewDayAdapt;
 import com.firstproject.androiddemofx.model.ModelDay;
-import com.firstproject.androiddemofx.month1.week2.activity_week_1_2;
-import com.firstproject.androiddemofx.month1.week3.activity_week_1_3;
-import com.firstproject.androiddemofx.month1.week4.activity_week_1_4;
+import com.firstproject.androiddemofx.month1.week2.Activity_Week_1_2;
+import com.firstproject.androiddemofx.month1.week3.Activity_Week_1_3;
+import com.firstproject.androiddemofx.month1.week4.Activity_Week_1_4;
 
 import java.util.ArrayList;
 
-public class activity_week_1_1 extends AppCompatActivity {
+public class Activity_Week_1_1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,19 +51,19 @@ public class activity_week_1_1 extends AppCompatActivity {
                 TextView tv = (TextView) view.findViewById(R.id.day);
                 String dayStr = tv.getText().toString();
                 if(dayStr=="1-1-1"){
-                    Intent intent = new Intent(activity_week_1_1.this, activity_day_1_1_1.class);
+                    Intent intent = new Intent(Activity_Week_1_1.this, Activity_Day_1_1_1.class);
                     startActivity(intent);
                 } else if (dayStr=="1-1-2") {
-                    Intent intent = new Intent(activity_week_1_1.this, activity_week_1_2.class);
+                    Intent intent = new Intent(Activity_Week_1_1.this, Activity_Week_1_2.class);
                     startActivity(intent);
                 }else if (dayStr=="1-1-3") {
-                    Intent intent = new Intent(activity_week_1_1.this, activity_week_1_3.class);
+                    Intent intent = new Intent(Activity_Week_1_1.this, Activity_Week_1_3.class);
                     startActivity(intent);
                 }else if (dayStr=="1-1-4") {
-                    Intent intent = new Intent(activity_week_1_1.this, activity_week_1_4.class);
+                    Intent intent = new Intent(Activity_Week_1_1.this, Activity_Week_1_4.class);
                     startActivity(intent);
                 }else if (dayStr=="1-1-5") {
-                    Intent intent = new Intent(activity_week_1_1.this, activity_week_1_4.class);
+                    Intent intent = new Intent(Activity_Week_1_1.this, Activity_Week_1_4.class);
                     startActivity(intent);
                 }
             }

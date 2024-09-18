@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".month1.week2.activity_day_1_2_3"
+    tools:context=".month1.week2.Activity_Day_1_2_3"
     android:layout_marginTop="1dp"
     >
 

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".month1.week2.activity_day_1_2_1">
+    tools:context=".month1.week2.Activity_Day_1_2_1">
 
     <TextView
         android:layout_width="wrap_content"

@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-public class activity_b extends AppCompatActivity {
+public class Activity_B extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

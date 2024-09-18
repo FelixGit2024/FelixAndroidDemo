@@ -11,7 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.firstproject.androiddemofx.month1.activity_month_1;
+import com.firstproject.androiddemofx.month1.Activity_Month_1;
+import com.firstproject.androiddemofx.month2.Activity_Month_2;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -46,10 +47,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btnM1){
-            Intent intent=new Intent(MainActivity.this, activity_month_1.class);
+            Intent intent=new Intent(MainActivity.this, Activity_Month_1.class);
             startActivity(intent);
         } else if (v.getId()==R.id.btnM2) {
-
+            Intent intent=new Intent(MainActivity.this, Activity_Month_2.class);
+            startActivity(intent);
         } else if (v.getId()==R.id.btnM3) {
 
         } else if (v.getId()==R.id.btnM4) {

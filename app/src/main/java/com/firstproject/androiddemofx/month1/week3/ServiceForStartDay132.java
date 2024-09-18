@@ -16,7 +16,7 @@ import com.firstproject.androiddemofx.R;
 import com.firstproject.androiddemofx.util.TimerManager;
 
 import java.util.Timer;
-public class serviceForStartDay132 extends Service {
+public class ServiceForStartDay132 extends Service {
     private static final String TAG = "MyStartService2";
     private NotificationManager notificationManager;
     private Timer timer;

@@ -7,7 +7,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-public class serviceForStartDay131 extends Service {
+public class ServiceForStartDay131 extends Service {
     private static final String TAG = "MyStartService1";
 
     @Override

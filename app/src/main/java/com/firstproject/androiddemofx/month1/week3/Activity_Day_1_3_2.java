@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-public class activity_day_1_3_2 extends AppCompatActivity {
+public class Activity_Day_1_3_2 extends AppCompatActivity {
     private boolean isBound=false;
     private TextView tvService1321;
     private TextView tvService1322;
@@ -56,7 +56,7 @@ public class activity_day_1_3_2 extends AppCompatActivity {
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, android.os.IBinder service) {
-            serviceForBindDay132.MyBinder binder = (serviceForBindDay132.MyBinder) service;
+            ServiceForBindDay132.MyBinder binder = (ServiceForBindDay132.MyBinder) service;
             Log.d("MainActivity", "Service connected");
             String currentText = tvService1322.getText().toString();
             tvService1322.setText(currentText+"Service connected\n");
@@ -114,7 +114,7 @@ public class activity_day_1_3_2 extends AppCompatActivity {
         startServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_day_1_3_2.this, serviceForStartDay132.class);
+                Intent intent = new Intent(Activity_Day_1_3_2.this, ServiceForStartDay132.class);
                 startService(intent);
             }
         });
@@ -122,7 +122,7 @@ public class activity_day_1_3_2 extends AppCompatActivity {
         stopServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_day_1_3_2.this, serviceForStartDay132.class);
+                Intent intent = new Intent(Activity_Day_1_3_2.this, ServiceForStartDay132.class);
                 stopService(intent);
             }
         });
@@ -130,7 +130,7 @@ public class activity_day_1_3_2 extends AppCompatActivity {
         bindServiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_day_1_3_2.this, serviceForBindDay132.class);
+                Intent intent = new Intent(Activity_Day_1_3_2.this, ServiceForBindDay132.class);
                 bindService(intent, serviceConnection, BIND_AUTO_CREATE);
                 isBound = true;
             }

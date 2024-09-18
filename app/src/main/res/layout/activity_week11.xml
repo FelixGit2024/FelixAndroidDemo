@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".month1.week1.activity_week_1_1">
+    tools:context=".month1.week1.Activity_Week_1_1">
 
     <ListView
         android:id="@+id/list_view_1_1"

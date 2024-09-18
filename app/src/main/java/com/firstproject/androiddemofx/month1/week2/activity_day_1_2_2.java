@@ -31,7 +31,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-public class activity_day_1_2_2 extends AppCompatActivity {
+public class Activity_Day_1_2_2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class activity_day_1_2_2 extends AppCompatActivity {
         btnToast1221.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity_day_1_2_2.this, "this is Toast", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Activity_Day_1_2_2.this, "this is Toast", Toast.LENGTH_SHORT).show();
             }
         });
         //带图片的toast
@@ -56,9 +56,9 @@ public class activity_day_1_2_2 extends AppCompatActivity {
         btnToast1222.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast=new Toast(activity_day_1_2_2.this);
+                Toast toast=new Toast(Activity_Day_1_2_2.this);
                 toast.setDuration(Toast.LENGTH_SHORT);
-                ImageView img=new ImageView(activity_day_1_2_2.this);
+                ImageView img=new ImageView(Activity_Day_1_2_2.this);
                 img.setImageResource(R.drawable.bingwallpaper2);
                 toast.setView(img);
                 toast.show();
@@ -69,14 +69,14 @@ public class activity_day_1_2_2 extends AppCompatActivity {
         btnToast1223.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast=new Toast(activity_day_1_2_2.this);
+                Toast toast=new Toast(Activity_Day_1_2_2.this);
                 toast.setDuration(Toast.LENGTH_SHORT);
 
-                LinearLayout linearLayout=new LinearLayout(activity_day_1_2_2.this);
+                LinearLayout linearLayout=new LinearLayout(Activity_Day_1_2_2.this);
 
-                TextView textView = new TextView(activity_day_1_2_2.this);
+                TextView textView = new TextView(Activity_Day_1_2_2.this);
                 textView.setText("自定义布局");
-                ImageView img = new ImageView(activity_day_1_2_2.this);
+                ImageView img = new ImageView(Activity_Day_1_2_2.this);
                 img.setImageResource(R.drawable.bingwallpaper3);
                 linearLayout.addView(img);
                 linearLayout.addView(textView);
@@ -90,26 +90,26 @@ public class activity_day_1_2_2 extends AppCompatActivity {
         btnDialog1221.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(activity_day_1_2_2.this)
+                AlertDialog.Builder builder = new AlertDialog.Builder(Activity_Day_1_2_2.this)
                         .setIcon(R.drawable.icon1_bluestar_foreground)
                         .setTitle("普通Dialog")
                         .setMessage("点击下面按钮")
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了确定", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了确定", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了取消", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了取消", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setNeutralButton("不确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了不确定", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了不确定", Toast.LENGTH_SHORT).show();
                             }
                         });
                 AlertDialog alertDialog = builder.create();
@@ -122,14 +122,14 @@ public class activity_day_1_2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String[] itemArray={"第一个","第二个","第三个","第四个","第五个"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(activity_day_1_2_2.this)
+                AlertDialog.Builder builder = new AlertDialog.Builder(Activity_Day_1_2_2.this)
                         .setIcon(R.drawable.icon1_bluestar_foreground)
                         .setTitle("列表Dialog")
 //                .setMessage("点击下面列表元素")
                         .setItems(itemArray, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了"+itemArray[which], Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了"+itemArray[which], Toast.LENGTH_SHORT).show();
                             }
                         });
                 AlertDialog alertDialog = builder.create();
@@ -142,25 +142,25 @@ public class activity_day_1_2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String[] itemArray = {"元素1", "元素2", "元素3", "元素4", "元素5"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(activity_day_1_2_2.this)
+                AlertDialog.Builder builder = new AlertDialog.Builder(Activity_Day_1_2_2.this)
                         .setIcon(R.drawable.icon1_bluestar_foreground)
                         .setTitle("单选对话框")
                         .setSingleChoiceItems(itemArray, 0, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "单选了-"+itemArray[which], Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "单选了-"+itemArray[which], Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了确定", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了确定", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了取消", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了取消", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -174,25 +174,25 @@ public class activity_day_1_2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String[] itemArray = {"元素1", "元素2", "元素3", "元素4", "元素5"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(activity_day_1_2_2.this)
+                AlertDialog.Builder builder = new AlertDialog.Builder(Activity_Day_1_2_2.this)
                         .setIcon(R.drawable.icon1_bluestar_foreground)
                         .setTitle("多选对话框")
                         .setMultiChoiceItems(itemArray, null, new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                                Toast.makeText(activity_day_1_2_2.this, itemArray[which]+"——"+isChecked, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, itemArray[which]+"——"+isChecked, Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了确定", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了确定", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(activity_day_1_2_2.this, "点击了取消", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, "点击了取消", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -206,10 +206,10 @@ public class activity_day_1_2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // AlertDialog.THEME_HOLO_LIGHT
-                DatePickerDialog datePickerDialog = new DatePickerDialog(activity_day_1_2_2.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Activity_Day_1_2_2.this, new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                Toast.makeText(activity_day_1_2_2.this, year + "-" + month + "-" + dayOfMonth, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Day_1_2_2.this, year + "-" + month + "-" + dayOfMonth, Toast.LENGTH_SHORT).show();
                             }
                         }, 2024, 5, 4);
                 datePickerDialog.show();
@@ -221,10 +221,10 @@ public class activity_day_1_2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // AlertDialog.THEME_HOLO_LIGHT设置对话框格式，可去掉
-                TimePickerDialog timePickerDialog = new TimePickerDialog(activity_day_1_2_2.this,AlertDialog.THEME_HOLO_LIGHT, new TimePickerDialog.OnTimeSetListener() {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(Activity_Day_1_2_2.this,AlertDialog.THEME_HOLO_LIGHT, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        Toast.makeText(activity_day_1_2_2.this, hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Activity_Day_1_2_2.this, hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
                     }
                 }, 9, 30, true);
                 timePickerDialog.show();
@@ -244,7 +244,7 @@ public class activity_day_1_2_2 extends AppCompatActivity {
                     notificationManager.createNotificationChannel(notificationChannel);
                 }
 
-                Notification notification = new NotificationCompat.Builder(activity_day_1_2_2.this,"channel_001")
+                Notification notification = new NotificationCompat.Builder(Activity_Day_1_2_2.this,"channel_001")
                         .setContentTitle("notification通知")
                         .setContentText("通知消息：notification显示完成")
                         .setWhen(System.currentTimeMillis())
@@ -271,7 +271,7 @@ public class activity_day_1_2_2 extends AppCompatActivity {
                     notificationManager.createNotificationChannel(notificationChannel);
                 }
 
-                Notification notification = new NotificationCompat.Builder(activity_day_1_2_2.this,"channel_002")
+                Notification notification = new NotificationCompat.Builder(Activity_Day_1_2_2.this,"channel_002")
                         .setContentTitle("自定义notification通知")
                         .setContentText("通知消息：自定义notification显示完成")
                         .setTicker("顶部显示文字SetTicker")
