@@ -1,16 +1,16 @@
 package com.firstproject.androiddemofx.model;
 
 public class ModelTask {
-    private int img;
+    private String taskNum;
     private String dayTask;
 
-    public ModelTask(int img, String dayTask) {
-        this.img = img;
+    public ModelTask(String taskNum, String dayTask) {
+        this.taskNum = taskNum;
         this.dayTask = dayTask;
     }
 
-    public int getImg() {
-        return img;
+    public String getTaskNum() {
+        return taskNum;
     }
 
     public String getDayTask() {

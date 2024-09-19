@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,10 +29,10 @@ public class ListViewTaskAdapt extends ArrayAdapter<ModelTask> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(this.mcontext).inflate(this.mresource, parent, false);
 
-        ImageView img = (ImageView) convertView.findViewById(R.id.img);
-        TextView dayTask = (TextView) convertView.findViewById(R.id.dayTask);
+        TextView taskNum = convertView.findViewById(R.id.taskNum);
+        TextView dayTask = convertView.findViewById(R.id.dayTask);
 
-        img.setImageResource(getItem(position).getImg());
+        taskNum.setText(getItem(position).getTaskNum());
         dayTask.setText(getItem(position).getDayTask());
 
         return convertView;

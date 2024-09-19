@@ -3,25 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@color/black"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+    <TextView
+        android:id="@+id/taskNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        />
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:text="content"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/dayTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="content"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_toRightOf="@+id/taskNum"
+        android:text="content"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 </RelativeLayout>
