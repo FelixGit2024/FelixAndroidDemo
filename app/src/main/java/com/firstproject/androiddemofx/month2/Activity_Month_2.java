@@ -16,10 +16,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.firstproject.androiddemofx.R;
 import com.firstproject.androiddemofx.listviewadapt.ListViewWeekAdapt;
 import com.firstproject.androiddemofx.model.ModelWeek;
-import com.firstproject.androiddemofx.month1.week2.Activity_Week_1_2;
 import com.firstproject.androiddemofx.month1.week3.Activity_Week_1_3;
 import com.firstproject.androiddemofx.month1.week4.Activity_Week_1_4;
 import com.firstproject.androiddemofx.month2.week1.Activity_Week_2_1;
+import com.firstproject.androiddemofx.month2.week2.Activity_Week_2_2;
 
 import java.util.ArrayList;
 
@@ -53,7 +53,7 @@ public class Activity_Month_2 extends AppCompatActivity {
                     Intent intent = new Intent(Activity_Month_2.this, Activity_Week_2_1.class);
                     startActivity(intent);
                 } else if (weekStr=="第二周") {
-                    Intent intent = new Intent(Activity_Month_2.this, Activity_Week_1_2.class);
+                    Intent intent = new Intent(Activity_Month_2.this, Activity_Week_2_2.class);
                     startActivity(intent);
                 }else if (weekStr=="第三周") {
                     Intent intent = new Intent(Activity_Month_2.this, Activity_Week_1_3.class);

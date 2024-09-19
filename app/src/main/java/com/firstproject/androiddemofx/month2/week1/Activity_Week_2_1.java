@@ -42,7 +42,8 @@ public class Activity_Week_2_1 extends AppCompatActivity {
         taskList.add(new ModelTask("  5  ","按键响应"));
         taskList.add(new ModelTask("  6  ","振动器"));
         taskList.add(new ModelTask("  7  ","按键控制振动器频率"));
-        taskList.add(new ModelTask("  8  ","闪光灯"));
+        taskList.add(new ModelTask("  8  ","手电筒开关"));
+        taskList.add(new ModelTask("  9  ","手电筒开关练习"));
 
         ListViewTaskAdapt taskAdapt = new ListViewTaskAdapt(this, R.layout.listview_item_task, taskList);
         lv21.setAdapter(taskAdapt);
@@ -69,6 +70,8 @@ public class Activity_Week_2_1 extends AppCompatActivity {
                     startActivity(new Intent(Activity_Week_2_1.this, Activity_Day_2_1_7.class));
                 }else if (taskNum=="  8  ") {
                     startActivity(new Intent(Activity_Week_2_1.this, Activity_Day_2_1_8.class));
+                }else if (taskNum=="  9  ") {
+                    startActivity(new Intent(Activity_Week_2_1.this, Activity_Day_2_1_9.class));
                 }
             }
         });
