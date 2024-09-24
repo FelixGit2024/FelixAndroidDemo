@@ -37,6 +37,11 @@ public class Activity_Week_2_2 extends AppCompatActivity {
         taskList.add(new ModelTask("  1  ","Camera2相机预览"));
         taskList.add(new ModelTask("  2  ","Camera2相机拍照"));
         taskList.add(new ModelTask("  3  ","Camera2相机测试"));
+        taskList.add(new ModelTask("  4  ","相机切换与拍照"));
+        taskList.add(new ModelTask("  5  ","AudioManager"));
+        taskList.add(new ModelTask("  6  ","MediaRecorder"));
+        taskList.add(new ModelTask("  7  ","MediaRecorder"));
+
 
 
         ListViewTaskAdapt taskAdapt = new ListViewTaskAdapt(this, R.layout.listview_item_task, taskList);
@@ -52,6 +57,14 @@ public class Activity_Week_2_2 extends AppCompatActivity {
                     startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_2.class));
                 }else if (taskNum=="  3  ") {
                     startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_3.class));
+                }else if (taskNum=="  4  ") {
+                    startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_4.class));
+                }else if (taskNum=="  5  ") {
+                    startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_5.class));
+                }else if (taskNum=="  6  ") {
+                    startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_6.class));
+                }else if (taskNum=="  7  ") {
+                    startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_7.class));
                 }
             }
         });
