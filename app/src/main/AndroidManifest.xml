@@ -24,6 +24,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.flash" />
@@ -177,15 +180,30 @@
         <activity
             android:name=".month2.week3.Activity_Week_2_3"
             android:exported="false" />
-
+        <activity
+            android:name=".month2.week3.Activity_Day_2_3_1"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week3.Activity_Day_2_3_2"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week3.Activity_Day_2_3_3"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week3.Activity_Day_2_3_4"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week3.Activity_Day_2_3_5"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week3.Activity_Day_2_3_6"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week3.Activity_Day_2_3_7"
+            android:exported="false" />
         <activity
             android:name=".month2.week4.Activity_Week_2_4"
             android:exported="false" />
-
-
-
-
-
     </application>
 
 </manifest>

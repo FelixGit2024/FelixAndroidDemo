@@ -16,10 +16,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.firstproject.androiddemofx.R;
 import com.firstproject.androiddemofx.listviewadapt.ListViewTaskAdapt;
 import com.firstproject.androiddemofx.model.ModelTask;
-import com.firstproject.androiddemofx.month2.week2.Activity_Day_2_2_1;
-import com.firstproject.androiddemofx.month2.week2.Activity_Day_2_2_2;
-import com.firstproject.androiddemofx.month2.week2.Activity_Day_2_2_3;
-import com.firstproject.androiddemofx.month2.week2.Activity_Day_2_2_4;
 
 import java.util.ArrayList;
 
@@ -38,10 +34,13 @@ public class Activity_Week_2_3 extends AppCompatActivity {
 
         ListView lv23=findViewById(R.id.list_view_2_3);
         ArrayList<ModelTask> taskList=new ArrayList<>();
-        taskList.add(new ModelTask("  1  ","Camera2相机预览"));
-        taskList.add(new ModelTask("  2  ","Camera2相机拍照"));
-        taskList.add(new ModelTask("  3  ","Camera2相机测试"));
-        taskList.add(new ModelTask("  4  ","相机切换与拍照"));
+        taskList.add(new ModelTask("  1  ","传感器信息"));
+        taskList.add(new ModelTask("  2  ","光线传感器"));
+        taskList.add(new ModelTask("  3  ","距离传感器"));
+        taskList.add(new ModelTask("  4  ","加速度传感器"));
+        taskList.add(new ModelTask("  5  ","陀螺仪传感器"));
+        taskList.add(new ModelTask("  6  ","地磁传感器"));
+        taskList.add(new ModelTask("  7  ","重力传感器"));
 
         ListViewTaskAdapt taskAdapt = new ListViewTaskAdapt(this, R.layout.listview_item_task, taskList);
         lv23.setAdapter(taskAdapt);
@@ -51,13 +50,19 @@ public class Activity_Week_2_3 extends AppCompatActivity {
                 TextView tv = view.findViewById(R.id.taskNum);
                 String taskNum = tv.getText().toString();
                 if(taskNum=="  1  "){
-                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_2_1.class));
+                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_3_1.class));
                 } else if (taskNum=="  2  ") {
-                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_2_2.class));
+                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_3_2.class));
                 }else if (taskNum=="  3  ") {
-                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_2_3.class));
+                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_3_3.class));
                 }else if (taskNum=="  4  ") {
-                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_2_4.class));
+                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_3_4.class));
+                }else if (taskNum=="  5  ") {
+                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_3_5.class));
+                }else if (taskNum=="  6  ") {
+                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_3_6.class));
+                }else if (taskNum=="  7  ") {
+                    startActivity(new Intent(Activity_Week_2_3.this, Activity_Day_2_3_7.class));
                 }
             }
         });
