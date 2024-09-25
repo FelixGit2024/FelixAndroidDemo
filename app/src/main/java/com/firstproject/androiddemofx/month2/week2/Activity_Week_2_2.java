@@ -40,7 +40,6 @@ public class Activity_Week_2_2 extends AppCompatActivity {
         taskList.add(new ModelTask("  4  ","相机切换与拍照"));
         taskList.add(new ModelTask("  5  ","AudioManager"));
         taskList.add(new ModelTask("  6  ","MediaRecorder"));
-        taskList.add(new ModelTask("  7  ","MediaRecorder"));
 
 
 
@@ -63,8 +62,6 @@ public class Activity_Week_2_2 extends AppCompatActivity {
                     startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_5.class));
                 }else if (taskNum=="  6  ") {
                     startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_6.class));
-                }else if (taskNum=="  7  ") {
-                    startActivity(new Intent(Activity_Week_2_2.this, Activity_Day_2_2_7.class));
                 }
             }
         });
