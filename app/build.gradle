@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation 'com.github.mjdev:libaums:0.5.5'
+    implementation 'org.greenrobot:eventbus:3.0.0'
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity

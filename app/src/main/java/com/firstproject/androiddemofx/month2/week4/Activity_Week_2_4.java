@@ -32,12 +32,15 @@ public class Activity_Week_2_4 extends AppCompatActivity {
             return insets;
         });
 
-        ListView lv24=findViewById(R.id.list_view_2_4);
-        ArrayList<ModelTask> taskList=new ArrayList<>();
-        taskList.add(new ModelTask("  1  ","USB连接状态"));
-        taskList.add(new ModelTask("  2  ","OTG连接和读取"));
-        taskList.add(new ModelTask("  3  ","电池状态"));
-        taskList.add(new ModelTask("  4  ","蓝牙"));
+        ListView lv24 = findViewById(R.id.list_view_2_4);
+        ArrayList<ModelTask> taskList = new ArrayList<>();
+        taskList.add(new ModelTask("  1  ", "USB连接状态"));
+        taskList.add(new ModelTask("  2  ", "OTG连接和读取"));
+        taskList.add(new ModelTask("  3  ", "电池状态"));
+        taskList.add(new ModelTask("  4  ", "蓝牙"));
+        taskList.add(new ModelTask("  5  ", "WIFI"));
+        taskList.add(new ModelTask("  6  ", "GPS"));
+        taskList.add(new ModelTask("  7  ", "OTG"));
 
         ListViewTaskAdapt taskAdapt = new ListViewTaskAdapt(this, R.layout.listview_item_task, taskList);
         lv24.setAdapter(taskAdapt);
@@ -46,14 +49,20 @@ public class Activity_Week_2_4 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView tv = view.findViewById(R.id.taskNum);
                 String taskNum = tv.getText().toString();
-                if(taskNum=="  1  "){
+                if (taskNum == "  1  ") {
                     startActivity(new Intent(Activity_Week_2_4.this, Activity_Day_2_4_1.class));
-                } else if (taskNum=="  2  ") {
+                } else if (taskNum == "  2  ") {
                     startActivity(new Intent(Activity_Week_2_4.this, Activity_Day_2_4_2.class));
-                }else if (taskNum=="  3  ") {
+                } else if (taskNum == "  3  ") {
                     startActivity(new Intent(Activity_Week_2_4.this, Activity_Day_2_4_3.class));
-                }else if (taskNum=="  4  ") {
+                } else if (taskNum == "  4  ") {
                     startActivity(new Intent(Activity_Week_2_4.this, Activity_Day_2_4_4.class));
+                } else if (taskNum == "  5  ") {
+                    startActivity(new Intent(Activity_Week_2_4.this, Activity_Day_2_4_5.class));
+                } else if (taskNum == "  6  ") {
+                    startActivity(new Intent(Activity_Week_2_4.this, Activity_Day_2_4_6.class));
+                }else if (taskNum == "  7  ") {
+                    startActivity(new Intent(Activity_Week_2_4.this, Activity_Day_2_4_7.class));
                 }
             }
         });

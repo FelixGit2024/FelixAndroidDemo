@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -28,9 +29,9 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission
         android:name="android.permission.BATTERY_STATS"
         tools:ignore="ProtectedPermissions" />
@@ -52,13 +53,22 @@
         android:theme="@style/Theme.AndroidDemoFX"
         tools:targetApi="31">
         <activity
+            android:name=".month2.week4.Activity_Day_2_4_2"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week4.Activity_Day_2_4_6"
+            android:exported="false" />
+        <activity
+            android:name=".month2.week4.Activity_Day_2_4_5"
+            android:exported="false" />
+        <activity
             android:name=".month2.week4.Activity_Day_2_4_4"
             android:exported="false" />
         <activity
             android:name=".month2.week4.Activity_Day_2_4_3"
             android:exported="false" />
         <activity
-            android:name=".month2.week4.Activity_Day_2_4_2"
+            android:name=".month2.week4.Activity_Day_2_4_7"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

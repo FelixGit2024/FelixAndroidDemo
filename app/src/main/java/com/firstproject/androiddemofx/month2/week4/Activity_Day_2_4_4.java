@@ -1,9 +1,7 @@
 package com.firstproject.androiddemofx.month2.week4;
 
-import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +10,14 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -23,16 +27,17 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.R;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Activity_Day_2_4_4 extends AppCompatActivity {
-
     private static final String TAG = "BLUETOOTH";
-    private static final int REQUEST_ENABLE_BT = 100;
-    private BluetoothManager bluetoothManager;
-    private BroadcastReceiver bluetoothReceiver;
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private BluetoothAdapter bluetoothAdapter;
-    private Set<BluetoothDevice> bondedDevices;
+    private BroadcastReceiver receiver;
+    private Button startBlueTooth, stopSearch;
+    private ListView listView;
+    private ArrayAdapter<String> adapter;
+    private ArrayList<String> deviceList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,147 +49,110 @@ public class Activity_Day_2_4_4 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        checkPermission();
-        //蓝牙管理对象
-        bluetoothManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
-        //蓝牙适配器
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (bluetoothAdapter == null) Log.d(TAG, "设备不支持蓝牙");
 
-        bondedDevices=bluetoothAdapter.getBondedDevices();
+        startBlueTooth = findViewById(R.id.startBlueTooth);
+        stopSearch = findViewById(R.id.stopSearch);
+        listView = findViewById(R.id.listView);
 
-        //开启蓝牙
-        if (!bluetoothAdapter.isEnabled()) {
-            Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
-        }
-
-        //搜索蓝牙设备
-
-        //开始搜索蓝牙设备
-        if (bluetoothAdapter.isDiscovering()) {
-            bluetoothAdapter.cancelDiscovery();
-        }
-        bluetoothAdapter.startDiscovery();
-
-        //蓝牙接受广播
-        bluetoothReceiver = new BroadcastReceiver() {
+        receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                String action = intent.getAction();
-                Bundle b = intent.getExtras();
-                Object[] lstName = b.keySet().toArray();
                 checkPermission();
-                // 显示所有收到的消息及其细节
-                for (int i = 0; i < lstName.length; i++) {
-                    String keyName = lstName[i].toString();
-                    Log.e("bluetooth", keyName + ">>>" + String.valueOf(b.get(keyName)));
-                }
-                BluetoothDevice device;
-                // 搜索发现设备时，取得设备的信息；注意，这里有可能重复搜索同一设备
+                String action = intent.getAction();
                 if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                    Log.d(TAG, "找到新设备了");
-                    device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                    String type="";
+                    BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                    if (0==device.getType()) type="未知设备类型";
+                    else if (1==device.getType()) type="传统蓝牙设备";
+                    else if (2==device.getType()) type="低功耗蓝牙设备";
+                    else if (3==device.getType()) type="双模设备";
 
-//                    Method method = null;
-//                    try {
-//                        method = device.getClass().getMethod("createBond");
-//                        method.invoke(device);
-//                        Method m = device.getClass().getMethod("createRfcommSocket", int.class);
-//                        BluetoothSocket socket = (BluetoothSocket) m.invoke(device, 1);
-//                        socket.connect();
-//                    } catch (NoSuchMethodException e) {
-//                        e.printStackTrace();
-//                    } catch (InvocationTargetException e) {
-//                        e.printStackTrace();
-//                    } catch (IllegalAccessException e) {
-//                        e.printStackTrace();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-                    Log.d(TAG, device.getName()+device.getType()+device.getBondState());
-                } else if (BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)) {
-                    device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                    int bondState = intent.getIntExtra(BluetoothDevice.EXTRA_BOND_STATE, BluetoothDevice.ERROR);
-                    if (bondState==BluetoothDevice.BOND_BONDING){
-                        Log.d(TAG, "蓝牙正在配对......");
-                    } else if (bondState==BluetoothDevice.BOND_BONDED) {
-                        Log.d(TAG, "蓝牙设备完成配对");
-                    } else if (bondState==BluetoothDevice.BOND_NONE) {
-                        Log.d(TAG, "蓝牙设备取消配对");
-                    }
+                    deviceList.add(device.getName() + "————>" + device.getAddress()+ "\n" + type);
+                    adapter.notifyDataSetChanged();
+                } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
+                    // 搜索完成
+                    Log.d(TAG, "搜索完成");
                 }
             }
         };
 
-        //注册广播接收器，监听蓝牙设备的发现
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(BluetoothDevice.ACTION_FOUND);//搜索发现设备
-        filter.addAction(BluetoothDevice.ACTION_BOND_STATE_CHANGED);//状态改变
-        filter.addAction(BluetoothAdapter.ACTION_SCAN_MODE_CHANGED);//行动扫描模式改变了
-        filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);//动作状态发生了变化
-        registerReceiver(bluetoothReceiver, filter);
-    }
-
-    //蓝牙回调广播
-    private void blueToothRegister(){
-
-    }
-
-    public void unregisterReceiver(Context context) {
-        unregisterReceiver(bluetoothReceiver);
-        if (bluetoothAdapter != null){
-            checkPermission();
-            bluetoothAdapter.cancelDiscovery();
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (bluetoothAdapter == null) {
+            Log.d(TAG, "设备不支持蓝牙");
+            // 设备不支持蓝牙
+            finish();
+            return;
         }
-    }
 
-    public void checkPermission(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED ||
-                    ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_SCAN,Manifest.permission.BLUETOOTH_CONNECT}, 1);
-            } else {
-                Log.d(TAG, "有BLUETOOTH_SCAN权限和BLUETOOTH_CONNECT权限");
-            }
-        }
-    }
+        deviceList = new ArrayList<>();
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, deviceList);
+        listView.setAdapter(adapter);
 
-    //处理蓝牙开启的结果
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_ENABLE_BT) {
-            if (resultCode == this.RESULT_OK) {
-                // 蓝牙已开启
-                Log.d(TAG, "蓝牙已开启");
-            } else {
-                // 用户拒绝开启蓝牙
-                Log.d(TAG, "用户拒绝开启蓝牙");
-            }
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1 ){
-            boolean bluetoothScanGranted = false;
-            boolean bluetoothConnectGranted = false;
-
-            for (int i = 0; i < permissions.length; i++) {
-                if (permissions[i].equals(Manifest.permission.BLUETOOTH_SCAN)) {
-                    bluetoothScanGranted = grantResults[i] == PackageManager.PERMISSION_GRANTED;
-                } else if (permissions[i].equals(Manifest.permission.BLUETOOTH_CONNECT)) {
-                    bluetoothConnectGranted = grantResults[i] == PackageManager.PERMISSION_GRANTED;
+        startBlueTooth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkPermission();
+                if (!bluetoothAdapter.isEnabled()) {
+                    // 请求打开蓝牙
+                    Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                    startActivityForResult(enableIntent, 1);
+                } else {
+                    startDiscovery();
                 }
             }
+        });
 
-            if (bluetoothScanGranted && bluetoothConnectGranted) {
-                Log.d(TAG, "可以进行蓝牙相关操作");
-                // 两个权限都已授予，可以进行蓝牙相关操作
-            } else {
-                Log.d(TAG, "蓝牙权限被拒绝，无法进行蓝牙操作。");
+        stopSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopDiscovery();
+                deviceList.clear();
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        // 注册接收已配对设备的广播
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(BluetoothDevice.ACTION_FOUND);//接收已配对设备的广播
+        filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);//接收搜索完成的广播
+        registerReceiver(receiver, filter);
+    }
+
+
+    private void startDiscovery() {
+        checkPermission();
+        // 确保蓝牙已开启
+        if (!bluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, 1);
+            return;
+        }
+        //取消蓝牙设备的搜索过程
+        if (bluetoothAdapter.isDiscovering()) {
+            bluetoothAdapter.cancelDiscovery();
+        }
+        //清空设备列表
+        adapter.clear();
+        //启动蓝牙设备的搜索
+        bluetoothAdapter.startDiscovery();
+    }
+
+    private void stopDiscovery(){
+        checkPermission();
+        if (bluetoothAdapter.isDiscovering()) {
+            bluetoothAdapter.cancelDiscovery();
+        }
+
+        // 取消注册广播接收器
+        if (receiver != null) {
+            try {
+                unregisterReceiver(receiver);
+                receiver=null;
+            } catch (IllegalArgumentException e) {
+                if (!e.getMessage().contains("Receiver not registered")) {
+                    // 如果不是因为未注册接收器而抛出的异常，进行处理
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -192,8 +160,44 @@ public class Activity_Day_2_4_4 extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (bluetoothReceiver!= null) {
-            unregisterReceiver(bluetoothReceiver);
+        checkPermission();
+        if (bluetoothAdapter!= null && bluetoothAdapter.isDiscovering()) {
+            bluetoothAdapter.cancelDiscovery();
+        }
+        try {
+            unregisterReceiver(receiver);
+            receiver=null;
+        } catch (IllegalArgumentException e) {
+            if (!e.getMessage().contains("Receiver not registered")) {
+                // 如果不是因为未注册接收器而抛出的异常，进行处理
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void checkPermission(){
+        // 检查并请求位置权限
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
+                return;
+            }else {
+//                Log.d(TAG, "有权限");
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // 权限已授予，开始搜索
+                startDiscovery();
+            } else {
+                // 权限被拒绝，提示用户
+                Toast.makeText(this, "需要位置权限来扫描蓝牙设备", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

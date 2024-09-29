@@ -6,25 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".month2.week4.Activity_Day_2_4_4">
+    tools:context=".month2.week4.Activity_Day_2_4_5">
 
     <Button
-        android:id="@+id/startBlueTooth"
+        android:id="@+id/startWIFI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="打开蓝牙并搜索"
-        android:textSize="30dp"/>
+        android:text="打开 Wi-Fi 并搜索" />
 
     <Button
-        android:id="@+id/stopSearch"
+        android:id="@+id/stopWIFI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="停止搜索"
-        android:textSize="30dp"/>
+        android:text="停止搜索" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

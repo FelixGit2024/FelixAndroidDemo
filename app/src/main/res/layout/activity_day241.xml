@@ -9,19 +9,11 @@
     tools:context=".month2.week4.Activity_Day_2_4_1">
 
     <TextView
-        android:id="@+id/tvText1"
+        android:id="@+id/tvUSBText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="30dp"
-        android:text="状态："/>
-
-    <TextView
-        android:id="@+id/tvText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:text="USB设备："/>
+        android:textSize="20dp"
+        android:text="USB连接状态"/>
 
 </LinearLayout>
