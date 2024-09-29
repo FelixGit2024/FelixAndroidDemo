@@ -67,7 +67,6 @@ public class Activity_Day_2_4_2 extends AppCompatActivity {
                     ArrayAdapter<String> adapter = new ArrayAdapter<>(Activity_Day_2_4_2.this, android.R.layout.simple_list_item_1, fileList);
                     fileListView.setAdapter(adapter);
                 }
-
             } else if (Intent.ACTION_MEDIA_REMOVED.equals(intent.getAction())) {
                 stateText.setText("USB状态：无介质");
                 Toast.makeText(context, "U盘插入 无存储介质", Toast.LENGTH_SHORT).show();

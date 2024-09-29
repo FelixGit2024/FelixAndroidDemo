@@ -63,8 +63,6 @@ public class Activity_Day_2_4_1 extends AppCompatActivity {
                     stateArr[0]="充电器状态：断开\n";
                 }
 
-
-
                 if ("android.hardware.usb.action.USB_STATE".equals(action)) {
                     boolean connected = intent.getExtras().getBoolean("connected");
                     int function = intent.getExtras().getInt("function", -1);

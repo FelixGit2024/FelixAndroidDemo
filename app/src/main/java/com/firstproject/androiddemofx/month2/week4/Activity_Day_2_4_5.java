@@ -63,6 +63,7 @@ public class Activity_Day_2_4_5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!wifiManager.isWifiEnabled()) {
+                    Toast.makeText(Activity_Day_2_4_5.this, "wifi已打开", Toast.LENGTH_SHORT).show();
                     wifiManager.setWifiEnabled(true);
                 }
                 startScan();

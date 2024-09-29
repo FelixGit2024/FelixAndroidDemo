@@ -24,7 +24,7 @@ public class Activity_Day_1_1_1 extends AppCompatActivity {
             return insets;
         });
         TextView tvById_tv111 = (TextView) findViewById(R.id.tv111);
-        tvById_tv111.setText("hello world");
-        tvById_tv111.setTextSize(50);
+        tvById_tv111.setText("Hello World");
+        tvById_tv111.setTextSize(60);
     }
 }
