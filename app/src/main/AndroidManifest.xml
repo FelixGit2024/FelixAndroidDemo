@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Traffic Stats Provider -->
+    <permission
+        android:name="com.firstproject.androiddemofx.provider.trafficstats.TrafficStatsContentProvider.READ_TRAFFIC_STATS"
+        android:protectionLevel="signatureOrSystem" />
+    <permission
+        android:name="com.firstproject.androiddemofx.provider.trafficstats.TrafficStatsContentProvider.WRITE_TRAFFIC_STATS"
+        android:protectionLevel="signatureOrSystem" />
 
+    <uses-permission android:name="com.firstproject.androiddemofx.provider.trafficstats.TrafficStatsContentProvider.READ_TRAFFIC_STATS" />
+    <uses-permission android:name="com.firstproject.androiddemofx.provider.trafficstats.TrafficStatsContentProvider.WRITE_TRAFFIC_STATS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
@@ -52,6 +61,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDemoFX"
         tools:targetApi="31">
+
+
+        <provider
+            android:name=".provider.trafficstats.TrafficStatsContentProvider"
+            android:authorities="com.firstproject.androiddemofx.provider;com.firstproject.androiddemofx.provider.trafficstats.TrafficStatsContentProvider"
+            android:directBootAware="true"
+            android:enabled="true"
+            android:exported="true"
+            android:initOrder="99"
+            android:label="Echolocate System TrafficStats Provider"
+            android:multiprocess="true"
+            android:process=":trafficStatsProvider"
+            android:protectionLevel="signatureOrSystem"
+            android:readPermission="com.firstproject.androiddemofx.provider.trafficstats.TrafficStatsContentProvider.READ_TRAFFIC_STATS"
+            android:writePermission="com.firstproject.androiddemofx.provider.trafficstats.TrafficStatsContentProvider.WRITE_TRAFFIC_STATS" />
+
         <activity
             android:name=".month2.week4.Activity_Day_2_4_2"
             android:exported="false" />
@@ -234,6 +259,15 @@
             android:exported="false" />
         <activity
             android:name=".month2.week4.Activity_Day_2_4_1"
+            android:exported="false" />
+        <activity
+            android:name=".month4.Activity_Month_4"
+            android:exported="false" />
+        <activity
+            android:name=".month4.week1.Activity_Week_4_1"
+            android:exported="false" />
+        <activity
+            android:name=".month4.week1.Activity_Day_4_1_1"
             android:exported="false" />
     </application>
 

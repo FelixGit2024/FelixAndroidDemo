@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".month4.week1.Activity_Day_4_1_1">
+
+    <!-- 插入数据相关 -->
+    <EditText
+        android:id="@+id/insert_cell_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入 cellId" />
+
+    <EditText
+        android:id="@+id/insert_rsrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入 rsrp" />
+
+    <EditText
+        android:id="@+id/insert_tech_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入 techType" />
+
+    <EditText
+        android:id="@+id/insert_times_tamp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入 timestamp" />
+
+    <Button
+        android:id="@+id/insert_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入数据" />
+
+    <!-- 查询数据相关 -->
+    <Button
+        android:id="@+id/query_all_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询所有数据" />
+
+    <EditText
+        android:id="@+id/query_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入要查询的数据 ID" />
+
+    <Button
+        android:id="@+id/query_by_id_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="根据 ID 查询数据" />
+
+    <!-- 删除数据相关 -->
+    <EditText
+        android:id="@+id/delete_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入要删除的数据 ID" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除数据" />
+
+    <!-- 修改数据相关 -->
+    <EditText
+        android:id="@+id/update_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入要修改的数据 ID" />
+
+    <EditText
+        android:id="@+id/update_rsrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入新的 rsrp" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改数据" />
+
+    <!-- 显示结果的 TextView -->
+    <TextView
+        android:id="@+id/result_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+</LinearLayout>

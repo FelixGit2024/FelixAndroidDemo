@@ -15,42 +15,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
-            android:text="学习任务规划"
+            android:text="成长任务规划"
             android:textSize="30dp"/>
 
         <Button
             android:id="@+id/btnM1"
-            android:layout_width="300dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="第一个月"
+            android:text="安卓基础知识学习"
             android:textSize="40dp"
             style="@style/CustomTextViewStyle"/>
 
         <Button
             android:id="@+id/btnM2"
-            android:layout_width="300dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="第二个月"
+            android:text="人机交互Demo"
             android:textSize="40dp"
             style="@style/CustomTextViewStyle"/>
 
         <Button
             android:id="@+id/btnM3"
-            android:layout_width="300dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="第三个月"
+            android:text="系统项目应用实践"
             android:textSize="40dp"
             style="@style/CustomTextViewStyle"/>
 
         <Button
             android:id="@+id/btnM4"
-            android:layout_width="300dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="第四个月"
+            android:text="部门项目业务"
             android:textSize="40dp"
             style="@style/CustomTextViewStyle"/>
 

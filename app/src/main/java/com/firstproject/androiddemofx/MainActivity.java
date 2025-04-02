@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.firstproject.androiddemofx.month1.Activity_Month_1;
 import com.firstproject.androiddemofx.month2.Activity_Month_2;
+import com.firstproject.androiddemofx.month4.Activity_Month_4;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId()==R.id.btnM3) {
 
         } else if (v.getId()==R.id.btnM4) {
-
+            Intent intent=new Intent(MainActivity.this, Activity_Month_4.class);
+            startActivity(intent);
         }
     }
 }
